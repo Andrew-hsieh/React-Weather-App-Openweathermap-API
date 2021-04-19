@@ -14,7 +14,7 @@ export const fetchCurrentWeather = (city='melbourne') => {
         });
       }
     )
-    .catch((err) => {
+    .catch((error) => {
       dispatch({
         type: 'FETCH_CURRENT_ERROR',
       });
