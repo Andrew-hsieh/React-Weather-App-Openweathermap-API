@@ -43,7 +43,7 @@ const CurrentWeather=({fetchDailyAndCurrentWeather, current, temperature, daily}
                             <div className='list-group-flush d-flex flex-column flex-md-row justify-content-center'>
                                 <li className={liClassName}>
                                         <small className='my-2'>Wind speed</small>
-                                        <h6>{current.wind.speed} /km</h6>
+                                        <h6>{current.wind.speed} m/sec</h6>
                                 </li>
                                 <li className={liClassName}>
                                         <small className='my-2'>Wind deg</small>
