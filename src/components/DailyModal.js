@@ -15,7 +15,7 @@ const DailyModal = ({modalState, setModalState, modalInfo}) => {
                 </div>
                 <div className='d-flex pb-2'>
                 <div className='col-5 d-flex flex-column align-items-start'>
-                    <h6>Rain:</h6>
+                    <h6>Rain: </h6>
                     <h6>Humidity:</h6>
                     <h6>Wind:</h6>
                     <h6>Sunrise:</h6>
