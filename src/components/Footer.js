@@ -8,9 +8,9 @@ const Footer = () => {
                 <small>Weather information is provide by openweathermap.org</small>
             </div>
             <div className='text-center pt-3'>
-                <ul className='d-flex justify-content-around col-4 mx-auto'>
+                <ul className='d-flex justify-content-around col-8 col-md-4 mx-auto'>
                     <li>
-                        <a href='https://github.com/zhi999xie'><i className="fab fa-github-square"></i></a>
+                        <a href='https://github.com/zhi999xie/Weather-App'><i className="fab fa-github-square"></i></a>
                     </li>
                     <li>
                         <a href='https://www.linkedin.com/in/andrew-hsieh-22a802205/'><i className="fab fa-linkedin"></i></a>
