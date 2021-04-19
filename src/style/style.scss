@@ -1,0 +1,93 @@
+* {
+  font-family: "Prata", serif;
+}
+
+h1,
+h6,
+div,
+small {
+  cursor: default;
+}
+
+i {
+  color: white;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:hover.fa-linkedin {
+    color: #0077b5;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+.search-btn {
+  border-radius: 0 0.25rem 0.25rem 0;
+  color: white;
+  background-color: #eb6e4b;
+  border: 1px #eb6e4b;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: #c55030;
+    color: white;
+  }
+}
+.search-input {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.switch-btn {
+  background-color: transparent;
+  color: #b8b8b8;
+  width: 80%;
+  padding: 0.3rem 0;
+  position: relative;
+  border: none;
+  outline: none;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    height: 20%;
+    border: 2px solid;
+    transition: all 0.6s ease;
+    border-radius: 2px;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: white;
+    border-right-color: white;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: white;
+    border-left-color: white;
+  }
+
+  &:hover:after,
+  :before {
+    border-bottom-color: white;
+    border-right-color: white;
+    border-top-color: white;
+    border-left-color: white;
+    width: 100%;
+    height: 100%;
+  }
+}
+.website-title {
+  padding-left: 0;
+}
