@@ -1,24 +1,24 @@
 import { combineReducers } from 'redux';
 
 const currentReducer = (prevState = {}, action) => {
-    switch (action.type) {
-      case 'FETCH_CURRENT_WEATHER':
-        return action.payload;
-      case 'FETCH_CURRENT_ERROR':
-        return prevState;
-      default:
-        return prevState;
-    }
-  };
+  switch (action.type) {
+    case 'FETCH_CURRENT_WEATHER':
+      return action.payload;
+    case 'FETCH_CURRENT_ERROR':
+      return prevState;
+    default:
+      return prevState;
+  }
+};
 
- const dailyReducer = (prevState = {}, action) => {
-    switch (action.type) {
-      case 'FETCH_DAILY_WEATHER':
-        return action.payload;
-      default:
-        return prevState;
-    }
-  };
+const dailyReducer = (prevState = {}, action) => {
+  switch (action.type) {
+    case 'FETCH_DAILY_WEATHER':
+      return action.payload;
+    default:
+      return prevState;
+  }
+};
 const tempScaleReducer = (prevState = 'celsius', action) => {
   switch (action.type) {
     case 'TOGGLE_TEMP_SCALE':
@@ -27,5 +27,6 @@ const tempScaleReducer = (prevState = 'celsius', action) => {
       return prevState;
   }
 };
-  export default combineReducers({daily:dailyReducer, current:currentReducer,tempScale:tempScaleReducer});
-
+export default combineReducers(
+  { daily: dailyReducer, current: currentReducer, tempScale: tempScaleReducer },
+);

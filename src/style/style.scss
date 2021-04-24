@@ -51,9 +51,6 @@ li {
   border-radius: 0.25rem;
   outline: none;
 }
-.website-title {
-  padding-left: 0;
-}
 
 .overlay-layer {
   position: fixed;
@@ -86,4 +83,15 @@ li {
   padding: 0.2rem 1rem;
   bottom: 10px;
   right: 10px;
+}
+
+.autocomplete-container {
+  position: absolute;
+  z-index: 1000;
+  border: 2px solid #eb6e4b;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  background-color: white;
+  min-width: 100%;
+  max-width: 100%;
 }
