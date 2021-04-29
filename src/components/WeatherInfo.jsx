@@ -1,5 +1,5 @@
-/* eslint-disable */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CurrentWeather from './CurrentWeather';
 import DailyWeather from './DailyWeather';
@@ -14,6 +14,10 @@ const WeatherInfo = ({ tempScale }) => {
       <DailyWeather temperature={temperature} />
     </div>
   );
+};
+
+WeatherInfo.propTypes = {
+  tempScale: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({ tempScale: state.tempScale });

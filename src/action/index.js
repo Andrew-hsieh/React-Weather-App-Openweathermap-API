@@ -20,13 +20,21 @@ export const fetchCurrentWeather = (lat, lon) => async (dispatch) => {
 };
 
 export const fetchDailyWeather = (lat, lon) => async (dispatch) => {
-  const response = await axios.get(
+  await axios.get(
     `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=${API_KEY}`,
-  );
-  dispatch({
-    type: 'FETCH_DAILY_WEATHER',
-    payload: response.data,
-  });
+  ).then(
+    (response) => {
+      dispatch({
+        type: 'FETCH_DAILY_WEATHER',
+        payload: response.data,
+      });
+    },
+  )
+    .catch(() => {
+      dispatch({
+        type: 'FETCH_DAILY_ERROR',
+      });
+    });
 };
 
 export const fetchDailyAndCurrentWeather = (lat, lon) => async (dispatch) => {

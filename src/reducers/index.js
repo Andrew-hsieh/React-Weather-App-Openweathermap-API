@@ -11,10 +11,12 @@ const currentReducer = (prevState = {}, action) => {
   }
 };
 
-const dailyReducer = (prevState = {}, action) => {
+const dailyReducer = (prevState = [], action) => {
   switch (action.type) {
     case 'FETCH_DAILY_WEATHER':
       return action.payload;
+    case 'FETCH_DAILY_ERROR':
+      return prevState;
     default:
       return prevState;
   }

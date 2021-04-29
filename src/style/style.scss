@@ -50,6 +50,7 @@ li {
   border: 1.5px solid white;
   border-radius: 0.25rem;
   outline: none;
+  min-width: 80px;
 }
 
 .overlay-layer {
@@ -83,6 +84,10 @@ li {
   padding: 0.2rem 1rem;
   bottom: 10px;
   right: 10px;
+}
+
+form {
+  min-width: 100%;
 }
 
 .autocomplete-container {

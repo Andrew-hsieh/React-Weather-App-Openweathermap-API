@@ -19,7 +19,10 @@ module.exports = {
     'react',
   ],
   rules: {
-    // "camelcase": ['error', 'never'],
-    // 'react/prop-types': ['error', 'off'],
+    camelcase: ['warn', { ignoreDestructuring: true }],
+    'react/prop-types': 'warn',
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'react/jsx-props-no-spreading': 'off',
   },
 };

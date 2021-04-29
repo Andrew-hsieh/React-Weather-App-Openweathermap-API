@@ -1,8 +1,8 @@
-/* eslint-disable */
-import moment from 'moment';
 import React, { useState } from 'react';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import DailyModal from './DailyModal.jsx';
+import DailyModal from './DailyModal';
 
 const DailyWeather = ({ daily, temperature }) => {
   const [modalState, setModalState] = useState(false);
@@ -13,7 +13,11 @@ const DailyWeather = ({ daily, temperature }) => {
     setModalState(true);
   };
   const renderDailyWeather = () => daily.map((day) => (
-    <div onClick={() => updateModal(day)} key={day.dt} className="list-group-item d-flex justify-content-between align-items-center row px-0 py-md-0 border-bottom clickable">
+    <div
+      onClick={() => updateModal(day)}
+      key={day.dt}
+      className="list-group-item d-flex justify-content-between align-items-center row px-0 py-md-0 border-bottom clickable"
+    >
       <div className="col text-center w-25 clickable">
         {moment.unix(day.dt).format('dddd')}
       </div>
@@ -54,10 +58,23 @@ const DailyWeather = ({ daily, temperature }) => {
         </div>
       </div>
       {renderDailyWeather()}
-      <DailyModal modalInfo={modalInfo} modalState={modalState} setModalState={() => setModalState(false)} />
+      <DailyModal
+        modalInfo={modalInfo}
+        modalState={modalState}
+        setModalState={() => setModalState(false)}
+      />
     </div>
   );
 };
+
+DailyWeather.propTypes = {
+  temperature: PropTypes.func.isRequired,
+  daily: PropTypes.instanceOf(Array),
+};
+DailyWeather.defaultProps = {
+  daily: null,
+};
+
 const mapStateToProps = (state) => ({ daily: state.daily.daily });
 
 export default connect(mapStateToProps)(DailyWeather);

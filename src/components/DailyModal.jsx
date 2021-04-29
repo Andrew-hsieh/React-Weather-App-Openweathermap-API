@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import ReactDom from 'react-dom';
 import moment from 'moment';
@@ -6,7 +5,7 @@ import moment from 'moment';
 const DailyModal = ({ modalState, setModalState, modalInfo }) => {
   if (!modalState || !modalInfo) return null;
   const {
-    sunrise, sunset, pop, humidity, dt, wind_speed,
+    sunrise, sunset, pop, humidity, dt, wind_speed: windSpeed,
   } = modalInfo;
 
   return ReactDom.createPortal(
@@ -28,7 +27,7 @@ const DailyModal = ({ modalState, setModalState, modalInfo }) => {
             <h6>{`${(pop * 100).toFixed(0)}%`}</h6>
             <h6>{`${humidity}%`}</h6>
             <h6>
-              {wind_speed}
+              {windSpeed}
               {' '}
               m/sec
             </h6>

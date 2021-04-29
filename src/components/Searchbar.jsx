@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchDailyAndCurrentWeather } from '../action';
 
-function Searchbar({ fetchDailyAndCurrentWeather }) {
+function SearchBar({ fetchWeather }) {
   const [input, setInput] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchDailyAndCurrentWeather(input);
+    fetchWeather(input);
     setInput('');
   };
   const handleChange = (e) => {
@@ -20,4 +21,8 @@ function Searchbar({ fetchDailyAndCurrentWeather }) {
   );
 }
 
-export default connect(null, { fetchDailyAndCurrentWeather })(Searchbar);
+SearchBar.propTypes = {
+  fetchWeather: PropTypes.func.isRequired,
+};
+
+export default connect(null, { fetchWeather: fetchDailyAndCurrentWeather })(SearchBar);
